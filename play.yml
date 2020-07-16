@@ -1,0 +1,20 @@
+---
+- name: Init Server
+  hosts: local
+  become: yes
+  # become_user: ubuntu
+
+  roles:
+    # - { 
+    #   role: user,
+    #   username: ubuntu,
+    #   # password: ""
+    # }
+    - {
+      role: zsh,
+      zsh_user: "ubuntu"
+    }
+    - { 
+      role: docker,
+      docker_users: ["ubuntu"],
+    }
